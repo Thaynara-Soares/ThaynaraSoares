@@ -1,0 +1,366 @@
+/* Variáveis CSS - Tema Rosa/Roxo/Preto Mais Escuro */
+:root {
+    --cor-primaria: #db2777; /* Rosa mais escuro e sofisticado */
+    --cor-secundaria: #7c3aed; /* Roxo mais escuro */
+    --cor-destaque: #e879f9; /* Rosa claro mais suave */
+    --cor-escura: #111827; /* Preto mais escuro */
+    --cor-preta: #000000; /* Preto puro */
+    --cor-texto: #374151; /* Cinza escuro */
+    --cor-texto-claro: #6b7280; /* Cinza médio */
+    --cor-fundo: #fce7f3; /* Rosa claro mais suave */
+    --cor-borda: #f9a8d4; /* Rosa borda mais suave */
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    padding-top: 64px; /* Altura do navbar fixo */
+    background-color: var(--cor-fundo);
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(219, 39, 119, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: white !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 0.5rem;
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--cor-destaque) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria), var(--cor-escura));
+    background-size: 400% 400%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/hero-bg.jpg') center/cover;
+    opacity: 0.08;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .text-warning {
+    color: #fde68a !important; /* Amarelo claro mais suave */
+}
+
+/* Seções */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--cor-escura);
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+}
+
+/* Sobre Section */
+#sobre {
+    background: white;
+}
+
+/* Foto de Perfil */
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 15px 30px rgba(219, 39, 119, 0.15);
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+}
+
+/* Cards de Habilidade */
+.skill-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(219, 39, 119, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--cor-borda);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.15);
+    border-color: var(--cor-primaria);
+}
+
+.skill-card i {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Habilidades Section */
+#habilidades {
+    background: linear-gradient(135deg, var(--cor-fundo), white);
+}
+
+/* Cards de Projeto */
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--cor-borda);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+    border-color: var(--cor-secundaria);
+}
+
+.project-img {
+    height: 200px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+}
+
+.project-img.placeholder {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    background: white;
+}
+
+/* Formulário de Contato */
+.form-control {
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-control:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.2rem rgba(219, 39, 119, 0.15);
+}
+
+/* Links Sociais */
+.social-links a {
+    color: var(--cor-primaria);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--cor-secundaria);
+    transform: translateY(-3px);
+}
+
+/* Botões Personalizados */
+.btn-primary {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(219, 39, 119, 0.25);
+    color: white;
+    background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-primaria));
+}
+
+.btn-light {
+    background: white;
+    color: var(--cor-primaria);
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: var(--cor-primaria);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: var(--cor-escura);
+}
+
+/* Badges e Tags */
+.badge-custom {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 0.2rem;
+    display: inline-block;
+}
+
+/* Animações de Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Progress Bars */
+.progress {
+    height: 8px;
+    border-radius: 10px;
+    background-color: var(--cor-borda);
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    border-radius: 10px;
+}
+
+/* Efeitos de texto gradiente */
+.text-gradient {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding-top: 64px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        animation-duration: 12s;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem !important;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-section {
+        animation: none;
+        background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    }
+}
+
