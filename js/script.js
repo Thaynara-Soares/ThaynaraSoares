@@ -10,15 +10,21 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Smooth scroll para links internos
+// Smooth scroll suave para links internos - VERSÃO CORRIGIDA
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Calcula a posição considerando a navbar fixa
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.offsetTop - navbarHeight - 30;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
@@ -95,43 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         typeWriter(heroTitle, originalText);
     }
 });
-
-// Contador de estatísticas (exemplo)
-function startCounters() {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const increment = target / speed;
-            
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        updateCount();
-    });
-}
-
-// Iniciar contadores quando a seção estiver visível
-const statsSection = document.querySelector('#estatisticas');
-if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startCounters();
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    });
-    
-    statsObserver.observe(statsSection);
-}
 
 // Efeito de partículas no hero (opcional)
 function createParticles() {
