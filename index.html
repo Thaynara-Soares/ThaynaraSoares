@@ -189,24 +189,21 @@
         <div class="container">
             <h2 class="section-title text-center mb-5">Entre em Contato</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Seu Nome" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Seu Email" required>
-                            </div>
+                <div class="col-lg-6 mx-auto">
+                    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+                        <div class="mb-4">
+                            <input type="text" class="form-control campo-form" placeholder="Seu Nome" id="nome" required>
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Assunto" required>
+                        <div class="mb-4">
+                            <input type="text" class="form-control campo-form" placeholder="Assunto" id="assunto" required>
                         </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Sua Mensagem" required></textarea>
+                        <div class="mb-4">
+                            <textarea class="form-control campo-form" placeholder="Digite sua mensagem" id="mensagem" rows="5" required></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Enviar Mensagem</button>
+                            <button type="submit" class="btn btn-primary btn-lg w-100 botao-form">
+                                <i class="fab fa-whatsapp me-2"></i>Enviar WhatsApp
+                            </button>
                         </div>
                     </form>
                     

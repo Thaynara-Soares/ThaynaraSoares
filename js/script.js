@@ -184,3 +184,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function enviarWhats(event) {
+    event.preventDefault();
+    
+    const nome = document.getElementById('nome').value;
+    const assunto = document.getElementById('assunto').value;
+    const mensagem = document.getElementById('mensagem').value;
+    
+    const telefone = "5584998464279";
+    
+    const texto = `Olá! Meu nome é ${nome}. 
+
+    Assunto: ${assunto}
+
+    ${mensagem}`;
+    
+    const mensagemCodificada = encodeURIComponent(texto);
+    
+    const urlWhatsApp = `https://wa.me/${telefone}?text=${mensagemCodificada}`;
+    
+    window.open(urlWhatsApp, '_blank');
+    
+    document.getElementById('formulario').reset();
+    
+    alert('Redirecionando para o WhatsApp...');
+}

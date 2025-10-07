@@ -364,3 +364,42 @@ footer {
     }
 }
 
+.campo-form {
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.campo-form:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.2rem rgba(219, 39, 119, 0.15);
+    outline: none;
+}
+
+.botao-form {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.botao-form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(219, 39, 119, 0.25);
+    color: white;
+    background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-primaria));
+}
+
+.formulario-contato {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
