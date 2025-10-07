@@ -403,3 +403,45 @@ footer {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
+/* Cards de Experiência e Educação */
+.experience-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(219, 39, 119, 0.08);
+    border: 2px solid var(--cor-borda);
+    transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.15);
+}
+
+.education-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+    border: 2px solid var(--cor-borda);
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+}
+
+/* Listas estilizadas */
+.list-unstyled li {
+    padding: 0.25rem 0;
+}
+
+.list-unstyled small {
+    color: var(--cor-texto-claro);
+}
+
+/* Badges */
+.badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+}
